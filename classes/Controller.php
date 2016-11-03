@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: KJ-Yen
- * Date: 2016/11/2
- * Time: 下午7:30
- */
 class Controller
 {
     protected $action ;
@@ -32,13 +26,14 @@ class Controller
 
         //require view file
         //ex：  views/users/login.php    //通常就xxxmodel單數
-        $view = 'views/' . get_class($this) . '/' . $this->action . '.php' ;
+        $viewxyz = 'views/' . get_class($this) . '/' . $this->action . '.php' ;
 
         //check to see if the fullview
         if($fullview){  //???
             //if so, then load the 『main layout：views/main.php』 file 『to wrap』 the view
             //可以讓那個main layout裡面有各種的html tag、其他的single頁面、single page
             require('views/main.php');
+                //在main.php中會去 require($view); ，也就是上面一直串的$view ，把它放進」main.php中的body
         }else{
             require($view);  //$view就是上面我們一直concatinate那一串
         }

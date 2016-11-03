@@ -4,9 +4,9 @@
 //define db params as constant
 //..
 
-define("DB_HOST",'localhost');
+define("DB_HOST",'localhost'); //e04一定要加上portNumber啊！！
 define("DB_USER",'root');
-define("DB_PASSWORD",'123456');
+define("DB_PASSWORD",'root');
 define("DB_NAME",'sharesite');
 
 //define URL

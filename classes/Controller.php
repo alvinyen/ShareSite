@@ -15,6 +15,7 @@ class Controller
     {
         $this->action = $action ;
         $this->request = $request ;
+//        echo $this->request;
     }
 
     public function executeAction(){

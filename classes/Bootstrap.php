@@ -13,13 +13,10 @@ class Bootstrap
 
     public function __construct($request)
     {
-        $this->$request = $request;
-//        echo $this->$request['controller'];
-//        echo '</br>';
-//        echo $this->$request['action'];
+        $this->request = $request;
 
         //handle controller
-        if ($this->$request['controller'] == "")   //代表http://localhost/ 而已, redirect到home
+        if ($this->request['controller'] == "")   //代表http://localhost/ 而已, redirect到home
         {
             $this->controller = 'home';
 //            echo $this->controller;
@@ -30,11 +27,11 @@ class Bootstrap
 
 
         //handle action
-        if ($this->$request["action"] == "") {
+        if ($this->request["action"] == "") {
             $this->action = "index";
 //            echo $this->action;
         } else {
-            $this->action = $this->$request["action"];
+            $this->action = $this->request["action"];
 //            echo $this->action;
         }
     }

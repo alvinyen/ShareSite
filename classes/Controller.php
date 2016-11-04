@@ -33,9 +33,9 @@ class Controller
             //if so, then load the 『main layout：views/main.php』 file 『to wrap』 the view
             //可以讓那個main layout裡面有各種的html tag、其他的single頁面、single page
             require('views/main.php');
-                //在main.php中會去 require($view); ，也就是上面一直串的$view ，把它放進」main.php中的body
+                //在main.php中會去 require($view); ，也就是上面一直串的$view ，把它放進main.php中的body
         }else{
-            require($view);  //$view就是上面我們一直concatinate那一串
+            require($viewxyz);  //$view就是上面我們一直concatinate那一串
         }
     }
 }

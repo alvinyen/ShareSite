@@ -6,4 +6,3 @@ class Home extends Controller {
         $this->returnView($viewModel->Index(), true);   //true is for the full view
     }
 }
-?>

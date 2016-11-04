@@ -53,4 +53,10 @@ class Model
     public function lastInsertId(){
         return $this->databaseHandler->lastInsertId();
     }
+
+    public function single(){
+        $this->execute();
+        return $this->statement->fetchAll(PDO::FETCH_ASSOC);
+            //using fetch instead of fetchAll, because we gonna using 1 record only！！
+    }
 }

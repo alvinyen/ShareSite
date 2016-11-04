@@ -5,7 +5,7 @@
     <div class="panel-body">
         <form method="post" action="<?php $_SERVER['PHP_SELF'] ; ?>"> <!-- 代表post到這個頁面 -->
             <div class="form-group">
-                <!--  1.Name、Email、3.Password、4.submit button -->
+                <!--  1.Name、2.Email、3.Password、4.submit button -->
 
                 <div class="form-group">
                     <label>Name</label>

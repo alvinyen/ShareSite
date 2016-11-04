@@ -1,5 +1,5 @@
 <div xmlns="http://www.w3.org/1999/html">
-    <a class="btn btn-success btn-share" href="<?= ROOT_PATH?>/shares/add">Share Sth</a>
+    <a class="btn btn-success btn-share" href="<?= ROOT_PATH?>shares/add">Share Sth</a>
 
 <!--    <h1>--><?//= count($viewmodeResultData) ?><!--</h1>-->
 

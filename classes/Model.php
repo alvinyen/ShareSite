@@ -18,6 +18,7 @@ class Model
 
     public function query($query){
         $this->statement = $this->databaseHandler->prepare($query);
+
     }
 
     //bind the prepare statement
@@ -37,7 +38,6 @@ class Model
                     $type = PDO::PARAM_STR;
             }
         }
-
         $this->statement->bindValue($param, $value, $type);
     }
 
@@ -48,5 +48,9 @@ class Model
     public function resultSet(){
         $this->execute();
         return $this->statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function lastInsertId(){
+        return $this->databaseHandler->lastInsertId();
     }
 }

@@ -22,8 +22,7 @@ class Controller
      * $viewmodel：其實就是modelName，傳入後require對應的model file
      * $fullview：boolean, 是否為fullview
      */
-    protected function returnView($viewmodel, $fullview){ //$viewmodel的重點就是model！！！
-
+    protected function returnView($viewmodeResultData, $fullview){ //$viewmodel的重點就是model！！！
         //require view file
         //ex：  views/users/login.php    //通常就xxxmodel單數
         $viewxyz = 'views/' . get_class($this) . '/' . $this->action . '.php' ;

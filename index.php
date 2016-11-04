@@ -1,5 +1,7 @@
 <?php
 
+session_start();//session必須要start之後才能繼續使用，因此在一定會load到的index.php去做設定
+
 //include config
 require('config.php');
 

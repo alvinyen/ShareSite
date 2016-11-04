@@ -43,19 +43,32 @@ class UserModel extends Model{
             //2.insert into databse (prepare query statement)
             $this->query('SELECT * FROM users WHERE email=:email AND password=:password');
             $this->bind(':email', $post['email']);
-            $this->bind(':password'git , $password);
+            $this->bind(':password', $password);
 
             //3.execute prepared query statement、透過single()方法取得回傳的資料列$row
             //因為普通的resultSet(除了執行execute之外)是回傳多個資料列，但這邊不用！！這邊只要撈一筆資料！！
             //承上，故到Base Model中去新增single()方法
             $row=$this->single();
 
-            echo count($row);
-
             //4.verify
             if($row){
                 //for test
-                echo 'logged in' ; //之後再來實作者邊的訊息方塊
+//                echo 'logged in' ; //之後再來實作者邊的訊息方塊
+
+                //5.creating session value
+//                echo $row['id'];
+//                echo $row['name'];
+//                echo $row['email'];
+                $_SESSION['is_logged_in']=true;
+                $_SESSION['user_data']=array(
+                    'id' => $row['id'],
+                    'name' => $row['name'],  //一但session value設定好之後就可以在app中任何1個地方使用
+                    'email' => $row['email'] //例如：歡迎$_SESSION['user_data']['name']登入
+                );
+
+                echo '<script>window.location.replace("http://localhost:8888");</script>';
+            }else{
+                echo 'logged failed';
             }
         }
     }

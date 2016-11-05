@@ -1,6 +1,7 @@
 <div xmlns="http://www.w3.org/1999/html">
-    <a class="btn btn-success btn-share" href="<?= ROOT_PATH?>shares/add">Share Sth</a>
-
+    <?php if(isset($_SESSION['is_logged_in'])): ?>
+        <a class="btn btn-success btn-share" href="<?= ROOT_PATH?>shares/add">Share Sth.</a>
+    <?php endif ;?>
 <!--    <h1>--><?//= count($viewmodeResultData) ?><!--</h1>-->
 
     <?php foreach($viewmodeResultData as $item) : ?>

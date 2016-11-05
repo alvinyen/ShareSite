@@ -68,7 +68,8 @@ class UserModel extends Model{
 
                 echo '<script>window.location.replace("http://localhost:8888");</script>';
             }else{
-                echo 'logged failed';
+//                echo 'logged failed';
+                Message::setMsg('Incorrect Login..', Message::error);
             }
         }
     }

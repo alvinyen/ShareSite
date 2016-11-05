@@ -40,6 +40,7 @@
 <div class="container">
 
     <div class="row">
+        <?php Message::displayMsg() ?>
         <?php require($viewxyz) ; ?>
     </div>
 

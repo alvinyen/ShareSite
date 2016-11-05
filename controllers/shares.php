@@ -14,4 +14,6 @@ class Shares extends Controller
         $viewModel = new ShareModel();
         $this->returnView( $viewModel->add(), true);
     }
+
+
 }

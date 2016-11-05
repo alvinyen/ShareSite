@@ -18,6 +18,11 @@ class ShareModel extends Model{
             //for test
 //            echo 'submitted';
 
+            if( $post['title']=='' || $post['body']=='' || $post['link']=='' ){
+                Message::setMsg('pls fill in add fields..', Message::error);
+                return ; //這個return超重要！！！！！不然會把那些空值塞進資料庫..且會redirect...結果錯誤訊息提示就永遠都沒機會看到...
+            }
+
             //3.insert into database
             //要處理的欄位有title、body、link、user_id
             $this->query('INSERT INTO Shares (title, body, link, user_id) VALUES (:title, :body, :link, :user_id)');

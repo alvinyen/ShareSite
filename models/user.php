@@ -10,6 +10,11 @@ class UserModel extends Model{
         $password = md5($post['password']);
 
         if($post['submit']){
+            if( $post['name']=='' || $post['email']=='' || $post['password']=='' ){
+                Message::setMsg('pls fill in add fields..', Message::error);
+                return ; //這個return超重要！！！！！不然會把那些空值塞進資料庫..且會redirect...結果錯誤訊息提示就永遠都沒機會看到...
+            }
+
             //3.insert into satabase (prepare query statement)
             $this->query('INSERT INTO users (name, email, password) VALUES (:name, :email, :password)');
             $this->bind(':name', $post['name']);

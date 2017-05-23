@@ -45,13 +45,13 @@ class Bootstrap
 
             //2.check extend
             $parent = class_parents($this->controller);
-            if(in_array("Controller", $parent)){    //???對照下面的base controller doesn't found
+            if(in_array("Controller", $parent)){    //對照下面的base controller doesn't found
 
                 //3.check method/action exist
                 if(method_exists($this->controller, $this->action)){
 
                     //pass all checks, then instantiate
-                    return new $this->controller($this->action, $this->request); //???
+                    return new $this->controller($this->action, $this->request);
                 }else{
                     echo "<h1>method doesn't exist.</h1>";
                 }

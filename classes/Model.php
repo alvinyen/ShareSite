@@ -18,7 +18,6 @@ class Model
 
     public function query($query){
         $this->statement = $this->databaseHandler->prepare($query);
-
     }
 
     //bind the prepare statement
